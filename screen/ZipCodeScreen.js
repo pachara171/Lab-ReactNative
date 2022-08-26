@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { FlatList, Text, View, StyleSheet, StatusBar, TouchableHighlight } from "react-native";
+import { FlatList, Text, View, StyleSheet, StatusBar, TouchableHighlight, TextInput } from "react-native";
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -28,6 +28,9 @@ const availableZipItems = [
         const navigation = useNavigation()
         return (
             <View>
+                <View style={Styles.search}>
+                    <TextInput placeholder = "Seach Places or Zip code"></TextInput>
+                </View>
                 <FlatList
                     data={availableZipItems}
                     keyExtractor={_keyExtractor}
@@ -59,10 +62,12 @@ const availableZipItems = [
         flex: 1,
         marginLeft: 200,
         fontWeight: "bold"
+    },
+    search: {
+        padding: 5,
+        marginBottom: 5,
+        marginTop: 10
         
-        
-
-
     }
    })
    
