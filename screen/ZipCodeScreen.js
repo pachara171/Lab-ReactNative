@@ -14,7 +14,7 @@ const availableZipItems = [
         navigation.navigate('Weather', { zipCode: code})}}>
         <View style={Styles.ZipItem}>
             <Text style={Styles.zipPlace}>{place}</Text>
-            <Text>{code}</Text>
+            <Text style={Styles.zipCode}>{code}</Text>
         </View>
     </TouchableHighlight>
     )
@@ -39,14 +39,25 @@ const availableZipItems = [
     ZipItem: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        marginTop: 1,
+        padding: 10,
+        borderWidth: 0.5,
+        borderColor: "red",
+        backgroundColor: "#61dafb"
     },
     zipPlace: {
         flex: 1,
+        marginLeft: 10,
+        fontWeight: "bold"
 
     },
     zipCode: {
         flex: 1,
+        marginLeft: 200,
+        fontWeight: "bold"
+        
+        
+
 
     }
    })
